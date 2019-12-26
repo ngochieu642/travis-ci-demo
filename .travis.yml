@@ -22,5 +22,5 @@ deploy:
   provider: script
   script: bash docker_push.sh
   on:
-    branch: master
+    branch: test/pm2-arm32v7
 
