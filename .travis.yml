@@ -1,0 +1,10 @@
+sudo: required
+services:
+  - docker
+
+script:
+  - docker build --tag ngochieu642/cow-say .
+  - docker run ngochieu642/cow-say
+
+after_script:
+  - docker images
