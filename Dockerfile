@@ -1,8 +1,10 @@
-FROM ubuntu
-RUN apt-get update && \
-    apt-get install -y --no-install-recommends cowsay && \
-    rm -rf /var/lib/apt/lists/*
-ENV PATH "$PATH:/usr/games"
+FROM arm32v7/node:8.17.0-alpine3.11
 
-ENTRYPOINT [ "cowsay" ]
-CMD [ "Once apon a time, there was a cow named Hieu" ]
+# Install pm2
+RUN npm install pm2 -g
+
+# Expose ports needed to use Keymetrics.io
+EXPOSE 80 443 43554
+
+# Start pm2.json process file
+CMD ["pm2-runtime", "start", "pm2.json"]
