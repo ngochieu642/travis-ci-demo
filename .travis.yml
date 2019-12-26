@@ -3,8 +3,8 @@ services:
   - docker
 
 script:
-  - docker build --tag ngochieu642/travis-test:cow-say .
-  - docker run ngochieu642/travis-test:cow-say
+  - docker build --tag ngochieu642/travis-test:pm2-arm32v7 .
+  - docker run ngochieu642/travis-test:pm2-arm32v7
 
 after_script:
   - docker images
