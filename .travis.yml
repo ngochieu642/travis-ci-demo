@@ -1,11 +1,20 @@
 sudo: required
 
 arch:
+<<<<<<< HEAD
+=======
+  - amd64
+>>>>>>> ff0b3157db40d9323343157dde1b5d27e56da339
   - arm64
 
 matrix:
   include:
     - os: linux
+<<<<<<< HEAD
+=======
+      arch: amd64
+    - os: linux
+>>>>>>> ff0b3157db40d9323343157dde1b5d27e56da339
       arch: arm64
 
 services:
