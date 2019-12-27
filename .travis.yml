@@ -1,7 +1,4 @@
 sudo: required
-
-arch:
-  - arm64
   
 matrix:
   include:
