@@ -12,8 +12,8 @@ services:
   - docker
 
 script:
-  - docker build --tag ngochieu642/${REPO} .
-  - docker run ngochieu642/${REPO}
+  - docker build --tag ${DOCKER_USERNAME}/${REPO} .
+  - docker run ${DOCKER_USERNAME}/${REPO}
 
 after_script:
   - docker images
@@ -22,4 +22,4 @@ deploy:
   provider: script
   script: bash docker_push.sh
   on:
-    branch: test/cow-say
+    branch: ${BRANCH}
