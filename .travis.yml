@@ -1,6 +1,24 @@
 sudo: required
+
 services:
   - docker
+
+arch:
+  - arm64
+  - amd64
+  - s390x
+  - ppc64le
+
+matrix:
+  include:
+    - os: linux
+      arch: arm64
+    - os: linux
+      arch: amd64
+    - os: linux
+      arch: s390x
+    - os: linux
+      arch: ppc64le
 
 script:
   - docker build --tag ngochieu642/travis-test:cow-say .
@@ -13,4 +31,4 @@ deploy:
   provider: script
   script: bash docker_push.sh
   on:
-    branch: master
+    branch: test/cow-say
