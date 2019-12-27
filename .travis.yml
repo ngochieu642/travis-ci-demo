@@ -1,10 +1,19 @@
 sudo: required
+
+arch:
+  - arm64
+  
+matrix:
+  include:
+    - os: linux
+      arch: arm64
+
 services:
   - docker
 
 script:
-  - docker build --tag ngochieu642/travis-test:cow-say .
-  - docker run ngochieu642/travis-test:cow-say
+  - docker build --tag ${DOCKER_USERNAME}/${REPO} .
+  - docker run ${DOCKER_USERNAME}/${REPO}
 
 after_script:
   - docker images
@@ -13,4 +22,4 @@ deploy:
   provider: script
   script: bash docker_push.sh
   on:
-    branch: master
+    branch: ${BRANCH}
