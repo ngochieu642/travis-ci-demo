@@ -12,7 +12,11 @@ matrix:
       arch: amd64
 
 script:
+<<<<<<< HEAD
   - docker build --tag ngochieu642/$REPO .
+=======
+  - docker build --tag ngochieu642/$REPO
+>>>>>>> db68f1d0d0064601fcbfd233bd70ed0bc76bc473
   - docker run ngochieu642/$REPO
 
 after_script:
