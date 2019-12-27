@@ -3,7 +3,7 @@ sudo: required
 matrix:
   include:
     - os: linux
-      arch: arm64
+      arch: amd64
 
 services:
   - docker
