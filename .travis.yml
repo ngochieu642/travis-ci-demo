@@ -1,8 +1,8 @@
 sudo: required
 
 arch:
-  - arm64
-
+  - amd64
+  
 matrix:
   include:
     - os: linux
@@ -11,9 +11,12 @@ matrix:
 services:
   - docker
 
+services:
+  - docker
+
 script:
-  - docker build --tag ngochieu642/travis-test:pm2-arm64 .
-  - docker run ngochieu642/travis-test:pm2-arm64
+  - docker build --tag ngochieu642/travis-test-cowsay:amd64 .
+  - docker run ngochieu642/travis-test-cowsay:amd64
 
 after_script:
   - docker images
