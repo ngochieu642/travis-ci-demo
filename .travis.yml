@@ -23,3 +23,7 @@ deploy:
   script: bash docker_push.sh
   on:
     branch: test/pm2-arm64
+<<<<<<< HEAD
+=======
+
+>>>>>>> b07af58112b519df9ffc590f0ec979fb4313bfcc
