@@ -12,8 +12,8 @@ services:
   - docker
 
 script:
-  - docker build --tag ngochieu642/travis-test-cowsay:amd64 .
-  - docker run ngochieu642/travis-test-cowsay:amd64
+  - docker build --tag ngochieu642/${REPO} .
+  - docker run ngochieu642/${REPO}
 
 after_script:
   - docker images
